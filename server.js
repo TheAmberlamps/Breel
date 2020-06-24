@@ -11,7 +11,7 @@ var db = require("./models");
 // Creating express app and configuring middleware
 //needed to read through our public folder
 var app = express();
-app.use(bodyParser.urlencoded({ extended: false })); //For body parser
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 // We need to use sessions to keep track of our user's login status
@@ -24,11 +24,6 @@ app.use(passport.session());
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
-//
-//we are doing a GET to test if our server is working fine
-app.get("/", function (req, res) {
-  res.send("Welcome to Passport with Sequelize and without HandleBars");
-});
 //
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function () {

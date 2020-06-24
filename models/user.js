@@ -37,6 +37,7 @@ module.exports = function (sequelize, DataTypes) {
   //     null
   //   );
   // });
+
   // return User;
 
   //This is a fix by Samaila Philemon Bala in case you want to use ES6
